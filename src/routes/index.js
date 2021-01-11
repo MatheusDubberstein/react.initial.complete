@@ -4,8 +4,7 @@ import { Switch } from 'react-router-dom';
 
 import { ThemeProvider } from 'styled-components';
 
-import Home from '~/pages/Home';
-import Login from '~/pages/Login';
+import { Home, Login } from '~/pages';
 import { Creators as AuthActions } from '~/store/modules/auth/duck';
 import GlobalTheme from '~/styles/global';
 import { darkTheme, lightThme } from '~/themes';
@@ -16,7 +15,7 @@ import Route from './Route';
 function routes() {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.configurations.theme);
-  // const theme = 'dark';
+
   api.interceptors.response.use(
     (response) => response,
     (error) => {
